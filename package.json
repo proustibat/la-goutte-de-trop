@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "An application illustrating the idiom \"the straw that broke the camel's back\" in real life context in collaboration.",
   "author": "Jennifer Proust",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "~4.9.x",

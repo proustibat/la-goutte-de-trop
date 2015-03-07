@@ -35,7 +35,7 @@ Make some changes to the code you just cloned deploy them to Heroku using Git.
 $ heroku login
 $ git add .
 $ git commit -am "make it better"
-($ heroku create)
+($ heroku create) // for your first deployment
 $ git push heroku master
 $ heroku open
 ```
