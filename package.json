@@ -25,6 +25,5 @@
     "jade",
     "real time app"
   ],
-  "license": "MIT",
-  "devDependencies": {}
+  "license": "MIT"
 }
