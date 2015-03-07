@@ -2,13 +2,14 @@
   "name": "last-straw",
   "version": "0.1.2",
   "description": "An application illustrating the idiom \"the straw that broke the camel's back\" in real life context in collaboration.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "~4.9.x",
-    "cool-ascii-faces": "~1.3.x"
+    "jade": "^1.9.2",
+    "socket.io": "^1.3.5"
   },
   "engines": {
     "node": "0.10.x"
@@ -20,7 +21,10 @@
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "jade",
+    "real time app"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }

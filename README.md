@@ -1,26 +1,41 @@
 # node-js-getting-started
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+An application illustrating the idiom "The straw that broke the camel's back" in real life context in collaboration..
 
 This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-## Running Locally
+## Build The App
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ heroku git:clone -a last-straw
+$ cd last-straw
 $ npm install
+```
+Your app should now be running on [localhost:5000](http://localhost:5000/).
+
+### Running locally
+Start your app locally using Foreman which is installed as part of the Heroku toolbelt.
+
+```sh
+$ foreman start web
+```
+
+You can also use the following npm command which launch "start" script defined in Package.json :
+```sh
 $ npm start
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 ## Deploying to Heroku
+Make some changes to the code you just cloned deploy them to Heroku using Git.
 
 ```
-$ heroku create
+$ heroku login
+$ git add .
+$ git commit -am "make it better"
+($ heroku create)
 $ git push heroku master
 $ heroku open
 ```
