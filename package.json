@@ -1,10 +1,11 @@
 {
   "name": "last-straw",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "An application illustrating the idiom \"the straw that broke the camel's back\" in real life context in collaboration.",
-  "main": "app.js",
+  "author": "Jennifer Proust",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "~4.9.x",
