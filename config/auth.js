@@ -10,9 +10,9 @@ module.exports = {
     },
 
     'twitterAuth' : {
-        'consumerKey'       : 'your-consumer-key-here',
-        'consumerSecret'    : 'your-client-secret-here',
-        'callbackURL'       : 'http://localhost:8080/auth/twitter/callback'
+        'consumerKey'       : 'Ro55GHS1RPZwLqqzJsTKTqZgH ',
+        'consumerSecret'    : '37994YpIzY302CZZj5lkeKK7AfpIb4WNMWyCBDt7sk025iPeUs',
+        'callbackURL'       : 'https://last-straw.herokuapp.com/auth/auth/twitter/callback'
     },
 
     'googleAuth' : {
