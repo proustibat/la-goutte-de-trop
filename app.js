@@ -5,7 +5,7 @@ var app = express();
 var router = express.Router();
 var mongoose = require('mongoose');
 var passport = require('passport');
-// var LocalStrategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
 
 var morgan = require('morgan');
