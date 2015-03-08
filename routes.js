@@ -142,7 +142,9 @@ module.exports = function(app, passport, router) {
     // TWITTER CONNECT =====================
     // =====================================
     // send to twitter to do the authentication
-    app.get('/auth/twitter', passport.authenticate('twitter'));
+    app.get('/auth/twitter', passport.authenticate('twitter', {
+        scope: 'email'
+    }));
 
     // handle the callback after twitter has authenticated the user
     app.get('/auth/twitter/callback',
