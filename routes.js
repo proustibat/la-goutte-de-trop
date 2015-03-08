@@ -82,7 +82,6 @@ module.exports = function(app, passport, router, data) {
     // process the signup form
     // app.post('/signup', do all our passport stuff here);
 
-    /*
 
     // =====================================
     // PROFILE SECTION =====================
@@ -95,6 +94,7 @@ module.exports = function(app, passport, router, data) {
         });
     });
 
+    /*
 
     // =====================================
     // LOGOUT ==============================
@@ -133,7 +133,7 @@ module.exports = function(app, passport, router, data) {
             });
     */
 };
-/*
+
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
@@ -144,4 +144,3 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-*/
