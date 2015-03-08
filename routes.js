@@ -18,12 +18,18 @@ module.exports = function(app, router, data) {
 
     // HOME
     router.get('/', function(request, response) {
-        response.render('home', {data: data});
+        response.render('home', {
+            page: request.url,
+            data: data
+        });
     });
 
     // about page route
     router.get('/about', function(request, response) {
-        response.render('about', {data: data});
+        response.render('about', {
+            page: request.url,
+            data: data
+        });
     });
 
     // route middleware to validate :name
