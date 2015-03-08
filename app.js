@@ -1,4 +1,5 @@
-// REQUIRE
+// REQUIRE ======================================================================
+// get all the tools we need
 var express = require('express');
 var app = express();
 var session = require('express-session');
@@ -14,13 +15,20 @@ var bodyParser = require('body-parser');
 
 var configDB = require('./config/database.js');
 
-// CONFIGURATION
+// CONFIGURATION ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // pass passport for configuration
 require('./config')(app);
 
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({
+    genid: function(req) {
+        return Date() // use UUIDs for session IDs
+    },
+    resave: false,
+    saveUninitialized: true,
+    secret: 'ilovescotchscotchyscotchscotch'
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -44,7 +52,7 @@ var menu = [{
 require('./routes')(app, passport, router, menu);
 app.use('/', router);
 
-// LISTEN
+// LAUNCH ======================================================================
 var server = app.listen(app.get('port'), function() {
     console.log("Node app is running on port:" + app.get('port'));
 });
@@ -54,9 +62,9 @@ var io = require('socket.io').listen(server);
 // io.set("transports", ["xhr-polling"]);
 // io.set("polling duration", 20);
 
-io.sockets.on('connection', function(socket) {
-    console.log('\ngot a new connection from: ' + socket.id + '\n');
-});
+// io.sockets.on('connection', function(socket) {
+//     console.log('\ngot a new connection from: ' + socket.id + '\n');
+// });
 
 app.use(function(err, req, res, next) {
     console.error(err.stack);
