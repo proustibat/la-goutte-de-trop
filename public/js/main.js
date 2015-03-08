@@ -1,10 +1,18 @@
 (function($) {
+    // var socket = io.connect('/');
+    var socket = io.connect('http://'+window.location.hostname+':'+window.location.port);
 
-    // var socket = io.connect(window.location.hostname);
+    socket.on('connect', function() {
+        console.log('connect');
+    });
 
-    // socket.on('status', function(data) {
-    //     $('#status').html(data.status);
-    // });
+    socket.on('error', function(data) {
+        console.log(data || 'error');
+    });
+
+    socket.on('connect_failed', function(data) {
+        console.log(data || 'connect_failed');
+    });
 
     // $('#reset').on('click', function(e) {
     //     socket.emit('reset');
