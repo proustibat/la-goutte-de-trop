@@ -94,7 +94,6 @@ module.exports = function(app, passport, router, data) {
         });
     });
 
-    /*
 
     // =====================================
     // LOGOUT ==============================
@@ -103,7 +102,7 @@ module.exports = function(app, passport, router, data) {
         req.logout();
         res.redirect('/');
     });
-    */
+
     /*
         // route middleware to validate :name
         router.param('name', function(req, res, next, name) {
