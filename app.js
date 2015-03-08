@@ -1,7 +1,7 @@
 // REQUIRE
 var express = require('express');
 var app = express();
-// var session = require('express-session');
+var session = require('express-session');
 var router = express.Router();
 var mongoose = require('mongoose');
 var passport = require('passport');
