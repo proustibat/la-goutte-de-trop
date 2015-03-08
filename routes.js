@@ -38,7 +38,6 @@ module.exports = function(app, passport, router, data) {
         });
     });
 
-    /*
     // =====================================
     // LOGIN PAGE HOME (with login links) ==
     // =====================================
@@ -49,6 +48,7 @@ module.exports = function(app, passport, router, data) {
         });
     });
 
+    /*
 
     // =====================================
     // LOGIN ===============================
