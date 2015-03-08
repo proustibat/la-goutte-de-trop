@@ -14,11 +14,6 @@ var bodyParser = require('body-parser');
 var configDB = require('./config/database.js');
 // var globalData = require('./data.js');
 
-// CONFIGURATION ===============================================================
-mongoose.connect(configDB.url); // connect to our database
-require('./config/passport')(passport); // pass passport for configuration
-require('./config')(app);
-
 // SESSION & PASSPORT ======================================================================
 app.use(session({
     genid: function(req) {
@@ -31,6 +26,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+
+// CONFIGURATION ===============================================================
+mongoose.connect(configDB.url); // connect to our database
+require('./config/passport')(passport); // pass passport for configuration
+require('./config')(app);
 
 
 // ROUTES ======================================================================
