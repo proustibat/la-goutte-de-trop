@@ -16,7 +16,8 @@ app.engine('html', require('ejs').renderFile); //renders .ejs as html
 app.set('views', __dirname + '/templates');
 app.set('port', port);
 
-app.get('/', routes.main);
+app.get('/', routes.home);
+app.get('/about', routes.about);
 
 
 // Configure

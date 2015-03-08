@@ -1,6 +1,10 @@
 /*
     GET /
 */
-exports.main = function(request, response) {
-    response.render('main.html');
+exports.home = function(request, response) {
+    response.render('home.html');
+}
+
+exports.about = function(request, response) {
+    response.render('about.html');
 }
