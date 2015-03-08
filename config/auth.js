@@ -16,9 +16,9 @@ module.exports = {
     },
 
     'googleAuth' : {
-        'clientID'      : 'your-secret-clientID-here',
-        'clientSecret'  : 'your-client-secret-here',
-        'callbackURL'   : 'http://localhost:8080/auth/google/callback'
+        'clientID'      : '627922429672-qfdg8dkvjro5ivsp2dr57mpc99km1pnf.apps.googleusercontent.com',
+        'clientSecret'  : 'KQ05lses6npxOdaf4pX0yxsh',
+        'callbackURL'   : 'https://last-straw.herokuapp.com/auth/google/callback'
     }
 
 };

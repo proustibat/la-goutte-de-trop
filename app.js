@@ -24,7 +24,7 @@ app.use(session({
     genid: function(req) {
         return Date() // use UUIDs for session IDs
     },
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     secret: 'ilovescotchscotchyscotchscotch'
 }));
