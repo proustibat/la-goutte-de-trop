@@ -65,7 +65,6 @@ module.exports = function(app, passport, router, data) {
     // process the login form
     // app.post('/login', do all our passport stuff here);
 
-    /*
 
     // =====================================
     // SIGNUP ==============================
@@ -83,6 +82,7 @@ module.exports = function(app, passport, router, data) {
     // process the signup form
     // app.post('/signup', do all our passport stuff here);
 
+    /*
 
     // =====================================
     // PROFILE SECTION =====================
