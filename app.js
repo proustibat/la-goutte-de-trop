@@ -11,11 +11,12 @@ var port = process.env.PORT || 5000;
 
 app.use(partials());
 app.use(express.static(__dirname + '/public'));
-app.engine('html', require('ejs').renderFile); //renders .ejs as html
+app.engine('html', ejs.renderFile); //renders .ejs as html
 // app.set('view engine', 'ejs');
 app.set('views', __dirname + '/templates');
 app.set('port', port);
 
+// Routes
 app.get('/', routes.home);
 app.get('/about', routes.about);
 
