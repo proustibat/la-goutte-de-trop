@@ -1,15 +1,16 @@
 // REQUIRE
 var express = require('express');
 var app = express();
+// var session = require('express-session');
 var router = express.Router();
 var mongoose = require('mongoose');
 var passport = require('passport');
+// var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
