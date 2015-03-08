@@ -6,7 +6,7 @@
   <head>
         <% include partials/head %>
   </head>
-  <body>
+  <body <%if (typeof data !== 'undefined' && typeof data.bodyClass !== 'undefined') {%>class="<%= data.bodyClass %>"<% } %>>
 
     <header>
         <% include partials/header %>

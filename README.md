@@ -1,6 +1,6 @@
 # node-js-getting-started
 
-An application illustrating the idiom "The straw that broke the camel's back" in real life context in collaboration..
+A collaborative application illustrating the idiom "The straw that broke the camel's back" in real life context.
 
 This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 

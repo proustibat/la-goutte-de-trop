@@ -70,16 +70,44 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
-/*body > .container {
-  padding: 60px 15px 0;
-}*/
+@media (max-width: 1600px) {
+  body .container {
+    max-width: 1024px;
+  }
+}
+@media (max-width: 1920px) {
+  body .container {
+    max-width: 1440px;
+  }
+}
 .container .text-muted {
   margin: 20px 0;
 }
 
 .last-straw-template {
   padding: 40px 15px 430px 15px;
+  text-align: left;
+}
+
+.last-straw-template .container.start {
   text-align: center;
+}
+
+.page-loginhome .last-straw-template .btn {
+  margin: 10px;
+    width: 160px;
+}
+@media screen and (max-width: 320px) {
+  .page-loginhome .last-straw-template .btn {
+    width: 100%;
+  }
+}
+
+.page-loginhome .last-straw-template .btn:not(.btn-default) {
+  color: #fff;
+}
+.page-loginhome .last-straw-template .btn.btn-default:hover {
+  color: #000;
 }
 
 .footer {
@@ -92,6 +120,16 @@ body {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.last-straw-template .img-responsive {
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+}
+.last-straw-template h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* ==========================================================================

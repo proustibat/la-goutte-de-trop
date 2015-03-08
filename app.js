@@ -8,19 +8,18 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
-
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var configDB = require('./config/database.js');
+// var globalData = require('./data.js');
 
 // CONFIGURATION ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // pass passport for configuration
 require('./config')(app);
 
-// required for passport
+// SESSION & PASSPORT ======================================================================
 app.use(session({
     genid: function(req) {
         return Date() // use UUIDs for session IDs
@@ -34,27 +33,13 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 
-// ROUTES
-var menu = [{
-    title: 'Home',
-    href: "/"
-}, {
-    title: 'About',
-    href: "/about"
-}, {
-    title: 'Enter',
-    href: "/enter"
-}, {
-    title: 'Hello Machine',
-    href: "/hello/machine"
-}];
-
-require('./routes')(app, passport, router, menu);
+// ROUTES ======================================================================
+require('./routes')(app, passport, router);
 app.use('/', router);
 
 // LAUNCH ======================================================================
 var server = app.listen(app.get('port'), function() {
-    console.log("Node app is running on port:" + app.get('port'));
+    console.log("Your fuckin app is running on port:" + app.get('port'));
 });
 
 // SOCKET

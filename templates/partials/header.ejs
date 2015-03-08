@@ -7,14 +7,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Last Straw</a>
+          <a class="navbar-brand" href="/"><%= layoutData.title %></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-           <% data.forEach(function(item) { %>
-                <li <%if (page===item.href) { %>class="active"<% } %>><a href="<%= item.href %>"><%= item.title %></a></li>
+           <% pages.forEach(function(item) { %>
+              <%if (item.isMenuItem) {%>
+                <li <%if (page===item.href) { %>class="active"<% } %>>
+                  <a href="<%= item.href %>"><%= item.title %></a>
+                </li>
+              <% } %>
             <% }); %>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>

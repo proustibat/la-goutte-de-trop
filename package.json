@@ -1,7 +1,7 @@
 {
   "name": "last-straw",
   "version": "1.0.0",
-  "description": "An application illustrating the idiom \"the straw that broke the camel's back\" in real life context in collaboration.",
+  "description": "A colloborative application illustrating the idiom \"the straw that broke the camel's back\" in real life context.",
   "author": "Jennifer Proust",
   "main": "app.js",
   "scripts": {
