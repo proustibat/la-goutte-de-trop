@@ -12,7 +12,7 @@ module.exports = {
     'twitterAuth' : {
         'consumerKey'       : 'Ro55GHS1RPZwLqqzJsTKTqZgH ',
         'consumerSecret'    : '37994YpIzY302CZZj5lkeKK7AfpIb4WNMWyCBDt7sk025iPeUs',
-        'callbackURL'       : 'https://last-straw.herokuapp.com/auth/auth/twitter/callback'
+        'callbackURL'       : 'https://last-straw.herokuapp.com/auth/twitter/callback'
     },
 
     'googleAuth' : {
