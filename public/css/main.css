@@ -92,6 +92,13 @@ body {
   padding-bottom: 60px;
 }
 
+.last-straw-template .glyphicon-log-in {
+  vertical-align: top;
+}
+.last-straw-template .well {
+  word-break :break-all;
+}
+
 .last-straw-template .well h1 {
   text-align: left;
   font-size: 24px;

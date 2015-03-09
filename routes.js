@@ -42,7 +42,7 @@ module.exports = function(app, passport, router) {
     // =====================================
     // LOGIN PAGE HOME (with login links) ==
     // =====================================
-    app.get('/goutte-moi-ca', function(req, res) {
+    app.get('/goutte-moi-ca',avoirdIfLogged, function(req, res) {
         // show the home page (will also have our login links)
         res.render('loginhome', {
             page: req.url,
@@ -57,12 +57,13 @@ module.exports = function(app, passport, router) {
     // PROFILE SECTION =====================
     // =====================================
     // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
+    // we will use route middleware to verify this (the loggedProtect function)
+    app.get('/profile', loggedProtect, function(req, res) {
         res.render('profile', {
             page: req.url,
             layoutData: globalData.layout,
             pages: globalData.pages,
+            data: globalData.profile,
             user: req.user // get the user out of session and pass to template
         });
     });
@@ -235,7 +236,7 @@ module.exports = function(app, passport, router) {
     // user account will stay active in case they want to reconnect in the future
 
     // LOCAL -----------------------------------
-    app.get('/unlink/local', isLoggedIn, function(req, res) {
+    app.get('/unlink/local', loggedProtect, function(req, res) {
         var user = req.user;
         user.local.email = undefined;
         user.local.password = undefined;
@@ -245,7 +246,7 @@ module.exports = function(app, passport, router) {
     });
 
     // FACEBOOK -------------------------------
-    app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+    app.get('/unlink/facebook', loggedProtect, function(req, res) {
         var user = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
@@ -254,7 +255,7 @@ module.exports = function(app, passport, router) {
     });
 
     // TWITTER --------------------------------
-    app.get('/unlink/twitter', isLoggedIn, function(req, res) {
+    app.get('/unlink/twitter', loggedProtect, function(req, res) {
         var user = req.user;
         user.twitter.token = undefined;
         user.save(function(err) {
@@ -263,7 +264,7 @@ module.exports = function(app, passport, router) {
     });
 
     // GOOGLE ---------------------------------
-    app.get('/unlink/google', isLoggedIn, function(req, res) {
+    app.get('/unlink/google', loggedProtect, function(req, res) {
         var user = req.user;
         user.google.token = undefined;
         user.save(function(err) {
@@ -273,11 +274,26 @@ module.exports = function(app, passport, router) {
 };
 
 // route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
+function loggedProtect(req, res, next) {
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated()) {
         return next();
     }
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/goutte-moi-ca');
 }
+
+// route middleware to redirect user on main app if he is logged in
+function avoirdIfLogged(req, res, next) {
+    console.log("REDIRECT IF LOGGED");
+    if (req.isAuthenticated()) {
+        console.log("L'utilisateur est loggué");
+        // user is authenticated he can go directly on the application page
+        res.redirect('/profile');
+    }
+    else {
+        console.log("l'utilisateur n'est pas loggué");
+        return next();
+    }
+}
+

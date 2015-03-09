@@ -51,6 +51,11 @@ module.exports = {
     loginhome: {
         title: "Authentication",
         bodyClass: "page-loginhome"
+    },
+
+    profile: {
+        title: "Profile Page",
+        bodyClass: "page-profile"
     }
 
 

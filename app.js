@@ -21,12 +21,9 @@ require('./config')(app);
 
 // SESSION & PASSPORT ======================================================================
 app.use(session({
-    genid: function(req) {
-        return Date() // use UUIDs for session IDs
-    },
-    resave: true,
+    resave: false,
     saveUninitialized: true,
-    secret: 'ilovescotchscotchyscotchscotch'
+    secret: 'iyoudontlaughwhowill'
 }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

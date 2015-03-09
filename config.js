@@ -10,7 +10,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 module.exports = function(app) {
-    console.log("### config");
     app.set('port', process.env.PORT || 5000);
 
     app.use(partials());
