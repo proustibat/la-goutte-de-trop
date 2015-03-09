@@ -85,12 +85,32 @@ body {
 }
 
 .last-straw-template {
-  padding: 40px 15px 430px 15px;
+  padding: 40px 15px 0 15px;
   text-align: left;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 60px;
 }
 
-.last-straw-template .container.start {
-  text-align: center;
+.last-straw-template .well h1 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.last-straw-template .well h1 .glyphicon {
+  vertical-align: top;
+}
+
+.last-straw-template .btn-enter {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.last-straw-template .btn-enter .glyphicon {
+  top: 3px;
+  float: right;
 }
 
 .page-loginhome .last-straw-template .btn {
@@ -109,6 +129,7 @@ body {
 .page-loginhome .last-straw-template .btn.btn-default:hover {
   color: #000;
 }
+
 
 .footer {
   position: absolute;

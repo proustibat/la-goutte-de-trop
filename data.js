@@ -43,10 +43,9 @@ module.exports = {
 
 
     home : {
-        title: "The Last Straw : qu'est-ce que c'est ?",
+        title: "La Goutte de Trop : qu'est-ce que c'est ?",
         bodyClass: "page-home",
-        introduction_en_US : "A collaborative application illustrating the idiom \"It is the last straw that breaks the camel's back\" in real life context.",
-        introduction_fr_FR : "Une application collaborative pour illustrer le proverbe \"C'est la goutte d'eau qui fait déborder le vase\""
+        introduction_fr_FR : "Une application de groupe pour illustrer le proverbe \"C'est la goutte d'eau qui fait déborder le vase\""
     },
 
     loginhome: {
