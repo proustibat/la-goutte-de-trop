@@ -14,14 +14,14 @@ module.exports = function(app) {
 
     app.use(partials());
 
-    // Set .html as the default template extension
-    app.set('view engine', 'html');
-
     // Initialize the ejs template engine
     app.engine('html', ejs.renderFile);
 
     // Tell express where it can find the templates
     app.set('views', __dirname + '/templates');
+
+    // Set .html as the default template extension
+    app.set('view engine', 'html');
 
     // Make the files in the public folder available to the world
     app.use(express.static(__dirname + '/public'));

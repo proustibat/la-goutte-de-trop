@@ -24,6 +24,10 @@ module.exports = {
     //     isMenuItem: true
     // }
     , {
+        title: 'Application',
+        href: "/app",
+        isMenuItem: true
+    }, {
         title: 'About',
         href: "/about",
         isMenuItem: true
@@ -36,7 +40,7 @@ module.exports = {
         href: "/logout",
         isMenuItem: false
     }, {
-        title: 'profile',
+        title: 'Profile',
         href: "/profile",
         isMenuItem: false
     }],
@@ -56,6 +60,11 @@ module.exports = {
     profile: {
         title: "Profile Page",
         bodyClass: "page-profile"
+    },
+
+    app: {
+        title: "La Goutte de Trop - Application",
+        bodyClass: "app"
     }
 
 

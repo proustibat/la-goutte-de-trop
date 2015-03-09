@@ -70,6 +70,19 @@ module.exports = function(app, passport, router) {
 
 
     // =====================================
+    // APPLICATION PAGE PAGE ===============
+    // =====================================
+    router.get('/app', loggedProtect, function(request, response) {
+        response.render('application', {
+            page: request.url,
+            layoutData: globalData.layout,
+            pages: globalData.pages,
+            data: globalData.app
+        });
+    });
+
+
+    // =====================================
     // LOGOUT ==============================
     // =====================================
     app.get('/logout', function(req, res) {

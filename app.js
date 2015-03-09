@@ -45,8 +45,14 @@ var io = require('socket.io').listen(server);
 // io.set("polling duration", 20);
 
 // io.sockets.on('connection', function(socket) {
-//     console.log('\ngot a new connection from: ' + socket.id + '\n');
+// console.log('\ngot a new connection from: ' + io.id + '\n');
 // });
+
+var nsp = io.of('/app');
+nsp.on('connection', function(socket) {
+    console.log('SERVER RECEIVED CONNECTION');
+});
+nsp.emit('hi', 'everyone!');
 
 app.use(function(err, req, res, next) {
     console.error(err.stack);
