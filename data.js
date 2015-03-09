@@ -4,8 +4,8 @@
 module.exports = {
 
     layout: {
-        title : "The Last Straw",
-        footer: "© Copyright 2015 The Last Straw"
+        title : "La goutte de trop",
+        footer: "© Copyright 2015 La Goutte de trop"
     },
 
     pages : [{
