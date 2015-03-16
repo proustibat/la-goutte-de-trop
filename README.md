@@ -11,23 +11,38 @@ This application support the [Getting Started with Node on Heroku](https://devce
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-$ heroku git:clone -a la-goutte-de-trop
+($ heroku git:clone -a la-goutte-de-trop)
+$ git clone git@github.com:proustibat/la-goutte-de-trop.git
 $ cd la-goutte-de-trop
 $ npm install
 ```
-Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 ### Running locally
-Start your app locally using Foreman which is installed as part of the Heroku toolbelt.
-
 ```sh
-$ foreman start web
+$ nodemon app.js
 ```
+
+or just use node
+```sh
+$ node app.js
+```
+
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 You can also use the following npm command which launch "start" script defined in Package.json :
 ```sh
 $ npm start
 ```
+
+### Working with Heroku
+
+Start your app locally using Foreman which is installed as part of the Heroku toolbelt.
+
+```sh
+$ foreman start web
+```
+Your app should now be running on [localhost:5000](http://localhost:5000/).
+
 
 
 ## Deploying to Heroku
