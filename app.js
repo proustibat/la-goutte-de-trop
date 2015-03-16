@@ -36,7 +36,7 @@ require('./routes')(app, passport, router);
 
 // LAUNCH ======================================================================
 var server = app.listen(app.get('port'), function() {
-    console.log("Your fuckin app is running on port:" + app.get('port'));
+    console.log("YEAH Your fuckin app is running on port:" + app.get('port'));
 });
 
 // SOCKET
@@ -48,11 +48,11 @@ var io = require('socket.io').listen(server);
 // console.log('\ngot a new connection from: ' + io.id + '\n');
 // });
 
-var nsp = io.of('/app');
-nsp.on('connection', function(socket) {
-    console.log('SERVER RECEIVED CONNECTION');
-});
-nsp.emit('hi', 'everyone!');
+// var nsp = io.of('/app');
+// nsp.on('connection', function(socket) {
+//     console.log('SERVER RECEIVED CONNECTION YEP');
+// });
+// nsp.emit('hi', 'everyone!');
 
 app.use(function(err, req, res, next) {
     console.error(err.stack);

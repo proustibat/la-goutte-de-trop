@@ -11,7 +11,6 @@ This application support the [Getting Started with Node on Heroku](https://devce
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-($ heroku git:clone -a la-goutte-de-trop)
 $ git clone git@github.com:proustibat/la-goutte-de-trop.git
 $ cd la-goutte-de-trop
 $ npm install
@@ -34,7 +33,34 @@ You can also use the following npm command which launch "start" script defined i
 $ npm start
 ```
 
-### Working with Heroku
+### Connecting to Heroku remote
+[https://devcenter.heroku.com/articles/git#tracking-your-app-in-git]
+If you are using Heroku git:
+
+```sh
+$  heroku create
+Creating falling-wind-1624... done, stack is cedar-14
+http://falling-wind-1624.herokuapp.com/ | https://git.heroku.com/falling-wind-1624.git
+Git remote heroku added
+```
+
+Iy you have an error : "Heroku client internal error."
+```sh
+$  heroku update
+```
+
+You can verify the remote in your git configuration as well:
+```sh
+$ git remote -v
+heroku  https://git.heroku.com/blooming-springs-9863.git (fetch)
+heroku  https://git.heroku.com/blooming-springs-9863.git (push)
+origin  git@github.com:proustibat/la-goutte-de-trop.git (fetch)
+origin  git@github.com:proustibat/la-goutte-de-trop.git (push)
+```
+
+
+
+
 
 Start your app locally using Foreman which is installed as part of the Heroku toolbelt.
 
