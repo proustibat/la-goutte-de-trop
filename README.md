@@ -33,9 +33,15 @@ You can also use the following npm command which launch "start" script defined i
 $ npm start
 ```
 
+### Save code on Github :
+```sh
+$ git commit -am "message"
+$ git push
+```
+
+
 ### Connecting to Heroku remote
 [https://devcenter.heroku.com/articles/git#tracking-your-app-in-git]
-If you are using Heroku git:
 
 ```sh
 $  heroku create
@@ -59,29 +65,50 @@ origin  git@github.com:proustibat/la-goutte-de-trop.git (push)
 ```
 
 
+## Deploying Code
+Make some changes to the code you just cloned deploy them to Heroku using Git.
 
+```sh
+$ git push heroku master
+Counting objects: 799, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (479/479), done.
+Writing objects: 100% (799/799), 1.33 MiB | 239.00 KiB/s, done.
+Total 799 (delta 271), reused 794 (delta 269)
+...
+...
 
+See the result:
+```sh
+$ heroku open
+```
 
+## Using Foreman
 Start your app locally using Foreman which is installed as part of the Heroku toolbelt.
 
 ```sh
 $ foreman start web
 ```
+
+## Using heroku for the first time ?
+```sh
+$ heroku login
+```
+
+## Rename Apps from the CLI
+```sh
+$ heroku apps:rename newname --app oldname
+```
+
+If any error :
+```sh
+npm install -g foreman
+nf start
+```
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 
 
-## Deploying to Heroku
-Make some changes to the code you just cloned deploy them to Heroku using Git.
-
-```
-$ heroku login
-$ git add .
-$ git commit -am "make it better"
-($ heroku create) // for your first deployment
-$ git push heroku master
-$ heroku open
-```
 
 ## Documentation
 
