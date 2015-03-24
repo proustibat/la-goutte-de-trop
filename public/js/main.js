@@ -2,10 +2,10 @@
     // var socket = io.connect('/');
 
 
-    var socket = io(window.location.protocol+'//'+window.location.hostname+':'+window.location.port+"/app");
+    // var socket = io(window.location.protocol+'//'+window.location.hostname+':'+window.location.port+"/app");
 
-    // var socket = io.connect(window.location.protocol+'//'+window.location.hostname+':'+window.location.port+"/app");
-    console.log("socket address: "+window.location.protocol+'//'+window.location.hostname+':'+window.location.port+"/app");
+    var socket = io.connect(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port);
+    // console.log("socket address: "+window.location.protocol+'//'+window.location.hostname+':'+window.location.port+"/app");
 
     socket.on('connect', function() {
         console.log('connection to IO');

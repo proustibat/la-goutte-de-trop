@@ -42,7 +42,7 @@ module.exports = function(app, passport, router) {
     // =====================================
     // LOGIN PAGE HOME (with login links) ==
     // =====================================
-    app.get('/goutte-moi-ca',avoirdIfLogged, function(req, res) {
+    router.get('/goutte-moi-ca',avoirdIfLogged, function(req, res) {
         // show the home page (will also have our login links)
         res.render('loginhome', {
             page: req.url,
@@ -58,7 +58,7 @@ module.exports = function(app, passport, router) {
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the loggedProtect function)
-    app.get('/profile', loggedProtect, function(req, res) {
+    router.get('/profile', loggedProtect, function(req, res) {
         res.render('profile', {
             page: req.url,
             layoutData: globalData.layout,
@@ -85,7 +85,7 @@ module.exports = function(app, passport, router) {
     // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/logout', function(req, res) {
+    router.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
     });
@@ -98,7 +98,7 @@ module.exports = function(app, passport, router) {
     // =====================================
     // LOGIN FORM ==========================
     // =====================================
-    app.get('/login', function(req, res) {
+    router.get('/login', function(req, res) {
         res.render('loginform', {
             page: req.url,
             layoutData: globalData.layout,
@@ -108,7 +108,7 @@ module.exports = function(app, passport, router) {
     });
 
     // process the login form
-    app.post('/login', passport.authenticate('local-login', {
+    router.post('/login', passport.authenticate('local-login', {
         successRedirect: '/profile', // redirect to the secure profile section
         failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
@@ -118,7 +118,7 @@ module.exports = function(app, passport, router) {
     // SIGNUP FORM =========================
     // =====================================
     // show the signup form
-    app.get('/signup', function(req, res) {
+    router.get('/signup', function(req, res) {
         // render the page and pass in any flash data if it exists
         res.render('signup', {
             page: req.url,
@@ -128,7 +128,7 @@ module.exports = function(app, passport, router) {
         });
     });
     // process the signup form
-    app.post('/signup', passport.authenticate('local-signup', {
+    router.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/profile', // redirect to the secure profile section
         failureRedirect: '/signup', // redirect back to the signup page if there is an error
         failureFlash: false // allow flash messages
@@ -139,12 +139,12 @@ module.exports = function(app, passport, router) {
     // FACEBOOK CONNECT ====================
     // =====================================
     // send to facebook to do the authentication
-    app.get('/auth/facebook', passport.authenticate('facebook', {
+    router.get('/auth/facebook', passport.authenticate('facebook', {
         scope: 'email'
     }));
 
     // handle the callback after facebook has authenticated the user
-    app.get('/auth/facebook/callback',
+    router.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -156,12 +156,12 @@ module.exports = function(app, passport, router) {
     // TWITTER CONNECT =====================
     // =====================================
     // send to twitter to do the authentication
-    app.get('/auth/twitter', passport.authenticate('twitter', {
+    router.get('/auth/twitter', passport.authenticate('twitter', {
         scope: 'email'
     }));
 
     // handle the callback after twitter has authenticated the user
-    app.get('/auth/twitter/callback',
+    router.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -173,12 +173,12 @@ module.exports = function(app, passport, router) {
     // GOOGLE CONNECT ======================
     // =====================================
     // send to google to do the authentication
-    app.get('/auth/google', passport.authenticate('google', {
+    router.get('/auth/google', passport.authenticate('google', {
         scope: ['profile', 'email']
     }));
 
     // the callback after google has authenticated the user
-    app.get('/auth/google/callback',
+    router.get('/auth/google/callback',
         passport.authenticate('google', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -190,12 +190,12 @@ module.exports = function(app, passport, router) {
     // ===================================================
 
     // LOCALLY --------------------------------
-    app.get('/connect/local', function(req, res) {
+    router.get('/connect/local', function(req, res) {
         res.render('connect-local', {
             message: req.flash('loginMessage')
         });
     });
-    app.post('/connect/local', passport.authenticate('local-signup', {
+    router.post('/connect/local', passport.authenticate('local-signup', {
         successRedirect: '/profile', // redirect to the secure profile section
         failureRedirect: '/connect/local', // redirect back to the signup page if there is an error
         failureFlash: false // allow flash messages
@@ -203,11 +203,11 @@ module.exports = function(app, passport, router) {
 
     // FACEBOOK -------------------------------
     // send to facebook to do the authentication
-    app.get('/connect/facebook', passport.authorize('facebook', {
+    router.get('/connect/facebook', passport.authorize('facebook', {
         scope: 'email'
     }));
     // handle the callback after facebook has authorized the user
-    app.get('/connect/facebook/callback',
+    router.get('/connect/facebook/callback',
         passport.authorize('facebook', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -216,11 +216,11 @@ module.exports = function(app, passport, router) {
 
     // TWITTER --------------------------------
     // send to twitter to do the authentication
-    app.get('/connect/twitter', passport.authorize('twitter', {
+    router.get('/connect/twitter', passport.authorize('twitter', {
         scope: 'email'
     }));
     // handle the callback after twitter has authorized the user
-    app.get('/connect/twitter/callback',
+    router.get('/connect/twitter/callback',
         passport.authorize('twitter', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -230,11 +230,11 @@ module.exports = function(app, passport, router) {
 
     // GOOGLE ---------------------------------
     // send to google to do the authentication
-    app.get('/connect/google', passport.authorize('google', {
+    router.get('/connect/google', passport.authorize('google', {
         scope: ['profile', 'email']
     }));
     // the callback after google has authorized the user
-    app.get('/connect/google/callback',
+    router.get('/connect/google/callback',
         passport.authorize('google', {
             successRedirect: '/profile',
             failureRedirect: '/'
@@ -249,7 +249,7 @@ module.exports = function(app, passport, router) {
     // user account will stay active in case they want to reconnect in the future
 
     // LOCAL -----------------------------------
-    app.get('/unlink/local', loggedProtect, function(req, res) {
+    router.get('/unlink/local', loggedProtect, function(req, res) {
         var user = req.user;
         user.local.email = undefined;
         user.local.password = undefined;
@@ -259,7 +259,7 @@ module.exports = function(app, passport, router) {
     });
 
     // FACEBOOK -------------------------------
-    app.get('/unlink/facebook', loggedProtect, function(req, res) {
+    router.get('/unlink/facebook', loggedProtect, function(req, res) {
         var user = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
@@ -268,7 +268,7 @@ module.exports = function(app, passport, router) {
     });
 
     // TWITTER --------------------------------
-    app.get('/unlink/twitter', loggedProtect, function(req, res) {
+    router.get('/unlink/twitter', loggedProtect, function(req, res) {
         var user = req.user;
         user.twitter.token = undefined;
         user.save(function(err) {
@@ -277,7 +277,7 @@ module.exports = function(app, passport, router) {
     });
 
     // GOOGLE ---------------------------------
-    app.get('/unlink/google', loggedProtect, function(req, res) {
+    router.get('/unlink/google', loggedProtect, function(req, res) {
         var user = req.user;
         user.google.token = undefined;
         user.save(function(err) {
