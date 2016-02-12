@@ -4,3 +4,5 @@ npm-debug.log
 /*.env
 /ignore
 /bootstrap-social-gh-pages
+/.idea
+/*.iml
