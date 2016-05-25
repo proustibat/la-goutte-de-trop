@@ -128,3 +128,9 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - Templating with EJS
 - Authentication with PassportJS
 - Bootstrap CSS
+
+
+
+## License
+
+[MIT](./LICENSE)
