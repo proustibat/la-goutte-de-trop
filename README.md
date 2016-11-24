@@ -1,3 +1,4 @@
+![Dependencies Updates Status](https://david-dm.org/proustibat/la-goutte-de-trop.svg)
 # La Goutte de Trop /!\ WIP /!
 
 A collaborative application illustrating the idiom "The straw that broke the camel's back" in real life context.
